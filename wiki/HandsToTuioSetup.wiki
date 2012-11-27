@@ -1,3 +1,16 @@
-=Don't worry...=
+#labels Phase-Deploy,Phase-Support
+=For developers:=
 
- I'll fill this in properly tomorrow
+You'll need:
+ # An IDE, such as [http://www.eclipse.org/ Eclipse] (Eclipse IDE for java developers is recommended)
+ # A svn tool, such as [http://www.eclipse.org/subversive/downloads.php the subversion svn plugin for Eclipse]
+
+Check out the hands-to-tuio project under this repository's trunk.
+
+If this project when checked out displays errors relating to missing OpenNI and NITE libraries:
+ # Ensure that OpenNI, NITE and primesense are installed correctly as detailed above.
+ # Remove the OpenNI and NITE libraries from project's build path.
+ # Find where Primesense is installed on your system (usually Program Files on Windows machines) and navigate to `...\PrimeSense\NITE\Bin`
+ # Adds the two jars in this directory as external jars to the project.
+
+If you'd like contribute contact the project owner.
