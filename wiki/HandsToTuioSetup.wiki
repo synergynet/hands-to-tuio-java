@@ -1,5 +1,96 @@
 #labels Phase-Deploy,Phase-Support
-=For developers:=
+Before running either the [http://code.google.com/p/hands-to-tuio-java/downloads/detail?name=HandsTUIO.zip compiled version] in the downloads or the development build you must have OpenNI, the !SensorKinect Driver and NITE installed.
+
+=Setting up OpenNI, Primesense & NITE=
+
+The following instructions are based on those given in [http://fivedots.coe.psu.ac.th/~ad/jg/nui165/index.html Andrew Davison's HandTracker project].*
+
+To install these packages and setup the Kinect to use them follow these instructions:
+
+----
+_For Windows:_ (Instructions derived from [http://fivedots.coe.psu.ac.th/~ad/jg/nui165/index.html Andrew Davison's HandTracker project])
+
+ # OpenNI
+  * Download [http://www.openni.org/downloadfiles/opennimodules/ OpenNI (v1.5.2.23)]
+   * In "OpenNI Binaries" select the stable branch and download
+  * Install the package from the downloaded executable		
+ # !SensorKinect Driver
+  * Download the relevant [https://github.com/avin2/SensorKinect/ SensorKinect Driver (v5.1.0.25)]
+   * Select the stable branch and download
+  * Install the !SensorKinect Driver
+   * Unzip the download and install from the appropriate executable		    
+ # NITE
+  * Download [http://www.openni.org/downloadfiles/opennimodules/ NITE (v1.5.2.21)]
+   * In "OpenNI Compliant Middleware Binaries" select either the stable branch and download
+  * Install the package from the downloaded executable	    
+ # Plug in the Kinect
+  * Ensure the Kinect is powered from the mains and plug it into the PC
+  * Allow windows to load the !SensorKinect motor, camera and audio drivers.
+----
+_For OSX:_ (Instructions derived from [http://code.google.com/p/simple-openni/wiki/Installation The Simple-OpenNI project])
+
+ # Ensure [http://developer.apple.com/technologies/tools/xcode.html Xcode] and [http://distfiles.macports.org/MacPorts/MacPorts-1.9.2-10.6-SnowLeopard.dmg MacPorts] are installed.
+ # Download the [http://code.google.com/p/simple-openni/downloads/detail?name=OpenNI_NITE_Installer-OSX-0.24.zip OpenNI OSX installer].
+ # Enter these commands into a terminal:
+{{{
+sudo port install git-core 
+sudo port install libtool
+sudo port install libusb-devel +universal
+}}}
+ # Enter these commands into a terminal:
+{{{
+mkdir ~/Development/Kinect
+cd Kinect
+tar xvf OpenNI-Bin-MacOSX-v*.tar.bz2
+sudo ./install.sh
+}}}
+ # Enter these commands into a terminal:
+{{{
+mkdir ~/Development/Kinect
+cd ~/Development/Kinect
+mkdir OpenNI
+mkdir Nite
+cd OpenNI
+}}}
+ # Enter these commands into a terminal:
+{{{
+tar xvf OpenNI-Bin-MacOSX-v*.tar.bz2
+sudo ./install.sh
+}}}
+----
+_For Linux:_ (Instructions derived from [http://code.google.com/p/simple-openni/wiki/Installation The Simple-OpenNI project])
+
+ # Download the relevant [http://www.openni.org/downloadfiles/opennimodules/ OpenNI Linux installer].
+ # Extract all files to a directory named openNI.
+ # Enter these commands into a terminal:
+{{{
+cd ./openNI/OpenNI-Bin-Linux64-v*
+sudo ./install
+}}}
+ # Enter these commands into a terminal (if installer asks you for the key it is: `0KOIk2JeIBYClPWVnMoRKn5cdY4=`):
+{{{
+cd ./openNI/Nite-*
+sudo ./install
+}}}
+ # Download the relevant [http://www.openni.org/downloadfiles/opennimodules/ SensorKinect Linux installer].
+ # Extract `./openNI/avin2-SensorKinect-28738dc/SensorKinect-Bin-Linux*-v*.tar.bz2`
+ # Enter these commands into a terminal:
+{{{ 
+cd ./openNI/SensorKinect-Bin-Linux*-v*
+sudo install
+}}}
+----
+
+=For multiple hand tracking:=
+
+The application can use two hands but with NITE multiple hands is often not activated by default.  To enable multiple hand you need to find the NITE.ini file.  Under windows file can be found at C:\Program File…\Prime Sense\NITE\Hands`*`\Data\Nite.ini (there may be multiple Hands`*` sub-folders, you will have to make the same changes in each.  Once found you need to uncomment the following the two lines from NITE.ini:
+{{{
+    ;AllowMultipleHands=1
+    ;TrackAdditionalHands=1
+}}}
+
+----
+=For the development build:=
 
 You'll need:
  # An IDE, such as [http://www.eclipse.org/ Eclipse] (Eclipse IDE for java developers is recommended)
