@@ -1,4 +1,4 @@
-![hands-to-tuio-java](https://github.com/synergynet/hands-to-tuio-java/blob/wiki/handsTUIO.png?raw=true)
+![hands-to-tuio-java](https://raw.githubusercontent.com/wiki/synergynet/hands-to-tuio-java/handsTUIO.png)
 
 This project is written in java and uses OpenNI, Primesense and NITE to track users' hands.  When users' hands are in range touch information is generate and broadcast using the TUIO protocol.
 
