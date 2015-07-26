@@ -3,3 +3,5 @@
 This project is written in java and uses OpenNI, Primesense and NITE to track users' hands.  When users' hands are in range touch information is generate and broadcast using the TUIO protocol.
 
 For information on how to setup the project read [this](https://github.com/synergynet/hands-to-tuio-java/wiki/Hands-To-Tuio-Setup).
+
+[![Analytics](https://ga-beacon.appspot.com/UA-29400586-7/hands-to-tuio?pixel)](https://github.com/igrigorik/ga-beacon)
